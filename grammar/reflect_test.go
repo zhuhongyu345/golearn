@@ -53,8 +53,10 @@ func TestRef(t *testing.T) {
 		fmt.Println(typ.Method(i).Name)
 	}
 	fmt.Println(vp.Elem().Field(0))
-	//todo  赋值失败
+	// 赋值 大写字母的 可以赋值 小写字母的不能,而且如果是指针，反射成功，如果是值，失败
 
+	vp.Elem().FieldByName("Age").SetInt(28)
+	vp.Elem().FieldByName("Name").SetString("zhu")
 	fmt.Println(stu)
 
 
@@ -62,12 +64,12 @@ func TestRef(t *testing.T) {
 }
 
 type stu struct {
-	name string
-	age  int
+	Name string
+	Age  int
 }
 
 func (s stu) Dos() {
-	fmt.Println("name", s.name, "age", s.age)
+	fmt.Println("name", s.Name, "age", s.Age)
 }
 
 func Hello() {
