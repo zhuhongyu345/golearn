@@ -59,8 +59,6 @@ func TestRef(t *testing.T) {
 	vp.Elem().FieldByName("Name").SetString("zhu")
 	fmt.Println(stu)
 
-
-
 }
 
 type stu struct {
